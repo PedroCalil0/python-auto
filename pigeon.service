@@ -1,0 +1,17 @@
+[Unit]
+Description=Servidor Python Pigeon
+After=network.target
+
+[Service]
+Type=simple
+# Coloque o usuário correto (pedro ou zero)
+User=pedro
+# A pasta onde o server.py está localizado
+WorkingDirectory=/home/pedro/pigeon
+# O caminho do python (que você achou no passo 1) seguido do script
+ExecStart=/usr/bin/python3 server.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
